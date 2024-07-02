@@ -13,9 +13,16 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        for index in 0..<10 {
+            let entry = Entry(context: viewContext)
+            entry.title = "Entry #\(index)"
+            entry.body = "Body String!"
+            entry.createdAt = Date()
+            do {
+                try viewContext.save()
+            } catch {
+                print("Error saving Entry to view context: \(error)")
+            }
         }
         do {
             try viewContext.save()

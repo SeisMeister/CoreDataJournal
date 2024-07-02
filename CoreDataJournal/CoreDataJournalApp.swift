@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct CoreDataJournalApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+                        JournalsView()
+//            EntriesView(journal: Journal())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
