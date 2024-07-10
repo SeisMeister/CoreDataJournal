@@ -7,42 +7,29 @@
 
 import Foundation
 import SwiftUI
-import CoreData
+import SwiftData
 
 struct JournalController {
     
     static var shared = JournalController()
-    
-    private var viewContext: NSManagedObjectContext {
-        PersistenceController.shared.container.viewContext
-    }
-    
-    func createNewEntry(in journal: Journal, title: String, body: String, image: UIImage?) {
-        let entry = Entry(context: viewContext)
-        entry.id = UUID().uuidString
-        entry.title = title
-        entry.body = body
-        entry.createdAt = Date()
-        entry.imageData = image?.pngData()
-        entry.journal = journal
         
-        do {
-            try viewContext.save()
-        } catch {
-            print("Error saving Entry to view context: \(error)")
-        }
+    func createNewEntry(in journal: Journal, title: String, body: String, image: UIImage?, modelContext: ModelContext) {
+        let entry = Entry(journal: journal, title: title, body: body, imageData: image?.jpegData(compressionQuality: 1.0))
+        modelContext.insert(entry)
     }
     
-    func createNewJournal(title: String, color: Color) {
-        let journal = Journal(context: viewContext)
+    func createNewJournal(title: String, color: Color, modelContext: ModelContext) {
+        let journal = Journal(title: title, colorHex: color.toHexString() ?? "")
         journal.id = UUID().uuidString
         journal.title = title
         journal.createdAt = Date()
-        journal.colorHex = color.toHexString()
-        saveContext()
+//        journal.colorHex = colorHex // colorHex not found in scope
+        journal.colorHex = journal.colorHex
+        modelContext.insert(journal)
+        try? modelContext.save()
     }
     
-    func updateEntry(entry: Entry, title: String, body: String, image: UIImage?) {
+    func updateEntry(entry: Entry, title: String, body: String, image: UIImage?, modelContext: ModelContext) {
         entry.title = title
         entry.body = body
         
@@ -50,22 +37,22 @@ struct JournalController {
             entry.imageData = image.pngData()
         }
         do {
-            try viewContext.save()
+            try modelContext.save()
         } catch {
             print("Error updating Entry in view context: \(error)")
         }
     }
     
-    func updateJournal(journal: Journal, title: String) {
+    func updateJournal(journal: Journal, title: String, modelContext: ModelContext) {
         journal.title = title
         do {
-            try viewContext.save()
+            try modelContext.save()
         } catch {
             print("Error saving Journal: \(error)")
         }
     }
     
-    func saveContext() {
-        try? viewContext.save()
-    }
+//    func saveContext() {
+//        try? modelContext.save()
+//    }
 }

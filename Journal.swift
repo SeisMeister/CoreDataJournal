@@ -10,14 +10,20 @@ import Foundation
 import SwiftData
 
 
-@Model public class Journal {
+@Model
+class Journal {
     var colorHex: String?
     var createdAt: Date?
     var id: String?
     var title: String?
     @Relationship(deleteRule: .cascade) var entries: [Entry]?
-    public init() {
-
+    
+    public init(title: String, colorHex: String?) {
+        self.title = title
+        self.colorHex = colorHex
+        self.createdAt = createdAt
+        self.id = UUID().uuidString
+        self.entries = []
     }
     
 }

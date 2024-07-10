@@ -10,15 +10,21 @@ import Foundation
 import SwiftData
 
 
-@Model public class Entry {
+@Model
+class Entry {
     var body: String?
     var createdAt: Date?
     var id: String?
     var imageData: Data?
     var title: String?
     var journal: Journal?
-    public init() {
-
+    
+    public init(journal: Journal, title: String, body: String, imageData: Data?) {
+        self.journal = journal
+        self.title = title
+        self.body = body
+        self.id = UUID().uuidString
+        self.imageData = imageData
     }
     
 }

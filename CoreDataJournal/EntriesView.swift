@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import CoreData
+import SwiftData
 
 var relativeDateFormatter: RelativeDateTimeFormatter = {
     let formatter = RelativeDateTimeFormatter()
@@ -14,13 +14,13 @@ var relativeDateFormatter: RelativeDateTimeFormatter = {
     return formatter
 }()
 
+
 struct EntriesView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
+    @Environment(\.modelContext) var context
 
     private var entries: [Entry] {  journal.entriesArray }
-    
-    @ObservedObject var journal: Journal
+
+    @State var journal: Journal
     
     @State private var isShowingAddEditView = false
     @State private var selectedEntry: Entry?
@@ -78,16 +78,7 @@ struct EntriesView: View {
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { entries[$0] }.forEach(viewContext.delete)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+            offsets.map { entries[$0] }.forEach{ context.delete($0) }
         }
     }
     
@@ -99,6 +90,7 @@ struct EntriesView: View {
     }()
     
 }
-#Preview {
-    EntriesView(journal: Journal()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-}
+//#Preview {
+//    EntriesView(journal: Journal()).environment(\.managedObjectContext, preview.container.modelContext)
+//}
+

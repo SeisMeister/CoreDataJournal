@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AddEditEntryView: View {
     @Environment(\.dismiss) private var dismiss
-    
+    @Environment(\.modelContext) var context
+
     var journal: Journal
     var entry: Entry? // will be `nil` if the user tapped the "+" button. Will have a value if the user tapped on a journal entry from the list.
     
@@ -105,23 +106,25 @@ struct AddEditEntryView: View {
                 entry: entry,
                 title: title,
                 body: bodyString,
-                image: selectedImage
+                image: selectedImage,
+                modelContext: context
             )
         } else {
             JournalController.shared.createNewEntry(
                 in: journal,
                 title: title,
                 body: bodyString,
-                image: selectedImage
+                image: selectedImage,
+                modelContext: context
             )
         }
         dismiss()
     }
 }
 
-#Preview {
-    AddEditEntryView(journal: Journal(), entry: nil)
-}
+//#Preview {
+//    AddEditEntryView(journal: Journal(), entry: nil)
+//}
 
 
 

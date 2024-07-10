@@ -6,19 +6,15 @@
 //
 
 import Foundation
-import CoreData
+import SwiftData
 import SwiftUI
 
 
 struct JournalsView: View {
-    @Environment(\.`managedObjectContext`) private var viewContext
+    @Environment(\.modelContext) private var modelContext
     @State private var isShowingJournalView = false
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Journal.createdAt, ascending: true)],
-        animation: .default)
-    private var journals: FetchedResults<Journal>
-    private var entries: FetchedResults<Entry>?
+    @Query(sort: \Journal.createdAt, order: .reverse) var journals: [Journal]
     
     
     var body: some View{
@@ -56,7 +52,7 @@ struct JournalsView: View {
             .navigationTitle("Journals")
         }
         .sheet(isPresented: $isShowingJournalView) {
-            AddEditJournalView(journal: Journal())
+            AddEditJournalView()
         }
     }
     private func addJournal() {
@@ -65,8 +61,8 @@ struct JournalsView: View {
     
     private func deleteJournals(offsets: IndexSet) {
         withAnimation {
-            offsets.map { journals[$0]}.forEach(viewContext.delete)
-            JournalController.shared.saveContext()
+            offsets.map { journals[$0] }.forEach{ modelContext.delete($0) }
+//            JournalController.shared.saveContext()
         }
     }
     
@@ -74,8 +70,7 @@ struct JournalsView: View {
 
 extension Journal {
     var entriesArray: [Entry] {
-        guard let all = entries?.allObjects as? [Entry] else { return [] }
-        return Array(all)
+        entries ?? []
     }
 }
 

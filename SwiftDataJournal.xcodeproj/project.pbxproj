@@ -13,16 +13,12 @@
 		DB702D832C223B28008569E8 /* EntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB702D822C223B28008569E8 /* EntriesView.swift */; };
 		DB702D852C223B29008569E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB702D842C223B29008569E8 /* Assets.xcassets */; };
 		DB702D882C223B29008569E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB702D872C223B29008569E8 /* Preview Assets.xcassets */; };
-		DB702D8A2C223B29008569E8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB702D892C223B29008569E8 /* Persistence.swift */; };
-		DB702D8D2C223B29008569E8 /* CoreDataJournal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB702D8B2C223B29008569E8 /* CoreDataJournal.xcdatamodeld */; };
 		DBF8D5302C29CC6500AD1FA1 /* JournalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8D52F2C29CC6500AD1FA1 /* JournalsView.swift */; };
 		DBF8D5322C29CC7100AD1FA1 /* AddEditJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8D5312C29CC7100AD1FA1 /* AddEditJournalView.swift */; };
 		DBF8D5342C29D23400AD1FA1 /* Journal+EntriesArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8D5332C29D23400AD1FA1 /* Journal+EntriesArray.swift */; };
-		DBF8D53C2C2C608B00AD1FA1 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8D5392C2C608B00AD1FA1 /* Entry+CoreDataProperties.swift */; };
-		DBF8D53D2C2C608B00AD1FA1 /* Journal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8D53A2C2C608B00AD1FA1 /* Journal+CoreDataClass.swift */; };
-		DBF8D53E2C2C608B00AD1FA1 /* Journal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8D53B2C2C608B00AD1FA1 /* Journal+CoreDataProperties.swift */; };
-		DBF8D5402C2C60A700AD1FA1 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8D53F2C2C60A700AD1FA1 /* Entry+CoreDataClass.swift */; };
 		DBF8D5422C3309F700AD1FA1 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8D5412C3309F700AD1FA1 /* ColorExtensions.swift */; };
+		DBF8D5452C34466E00AD1FA1 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8D5432C34466E00AD1FA1 /* Journal.swift */; };
+		DBF8D5462C34466E00AD1FA1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF8D5442C34466E00AD1FA1 /* Entry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,16 +29,12 @@
 		DB702D822C223B28008569E8 /* EntriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesView.swift; sourceTree = "<group>"; };
 		DB702D842C223B29008569E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB702D872C223B29008569E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DB702D892C223B29008569E8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		DB702D8C2C223B29008569E8 /* CoreDataJournal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataJournal.xcdatamodel; sourceTree = "<group>"; };
 		DBF8D52F2C29CC6500AD1FA1 /* JournalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalsView.swift; sourceTree = "<group>"; };
 		DBF8D5312C29CC7100AD1FA1 /* AddEditJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditJournalView.swift; sourceTree = "<group>"; };
 		DBF8D5332C29D23400AD1FA1 /* Journal+EntriesArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+EntriesArray.swift"; sourceTree = "<group>"; };
-		DBF8D5392C2C608B00AD1FA1 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DBF8D53A2C2C608B00AD1FA1 /* Journal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		DBF8D53B2C2C608B00AD1FA1 /* Journal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Journal+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DBF8D53F2C2C60A700AD1FA1 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DBF8D5412C3309F700AD1FA1 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		DBF8D5432C34466E00AD1FA1 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+		DBF8D5442C34466E00AD1FA1 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +51,8 @@
 		DB702D742C223B28008569E8 = {
 			isa = PBXGroup;
 			children = (
-				DBF8D5392C2C608B00AD1FA1 /* Entry+CoreDataProperties.swift */,
-				DBF8D53F2C2C60A700AD1FA1 /* Entry+CoreDataClass.swift */,
-				DBF8D53A2C2C608B00AD1FA1 /* Journal+CoreDataClass.swift */,
-				DBF8D53B2C2C608B00AD1FA1 /* Journal+CoreDataProperties.swift */,
+				DBF8D5432C34466E00AD1FA1 /* Journal.swift */,
+				DBF8D5442C34466E00AD1FA1 /* Entry.swift */,
 				DBF8D5312C29CC7100AD1FA1 /* AddEditJournalView.swift */,
 				DBF8D5412C3309F700AD1FA1 /* ColorExtensions.swift */,
 				DB702D7F2C223B28008569E8 /* CoreDataJournal */,
@@ -87,8 +77,6 @@
 				DB3DD1D92C232C5A0084C072 /* AddEditEntryView.swift */,
 				DB3DD1DB2C238C8D0084C072 /* JournalController.swift */,
 				DB702D842C223B29008569E8 /* Assets.xcassets */,
-				DB702D892C223B29008569E8 /* Persistence.swift */,
-				DB702D8B2C223B29008569E8 /* CoreDataJournal.xcdatamodeld */,
 				DBF8D5332C29D23400AD1FA1 /* Journal+EntriesArray.swift */,
 				DB702D862C223B29008569E8 /* Preview Content */,
 			);
@@ -138,7 +126,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DB702D782C223B28008569E8 /* Build configuration list for PBXProject "CoreDataJournal" */;
+			buildConfigurationList = DB702D782C223B28008569E8 /* Build configuration list for PBXProject "SwiftDataJournal" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -173,19 +161,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB702D8A2C223B29008569E8 /* Persistence.swift in Sources */,
 				DB3DD1DC2C238C8D0084C072 /* JournalController.swift in Sources */,
 				DB702D832C223B28008569E8 /* EntriesView.swift in Sources */,
-				DB702D8D2C223B29008569E8 /* CoreDataJournal.xcdatamodeld in Sources */,
+				DBF8D5452C34466E00AD1FA1 /* Journal.swift in Sources */,
+				DBF8D5462C34466E00AD1FA1 /* Entry.swift in Sources */,
 				DBF8D5302C29CC6500AD1FA1 /* JournalsView.swift in Sources */,
 				DB702D812C223B28008569E8 /* CoreDataJournalApp.swift in Sources */,
 				DBF8D5322C29CC7100AD1FA1 /* AddEditJournalView.swift in Sources */,
 				DB3DD1DA2C232C5A0084C072 /* AddEditEntryView.swift in Sources */,
 				DBF8D5342C29D23400AD1FA1 /* Journal+EntriesArray.swift in Sources */,
-				DBF8D53C2C2C608B00AD1FA1 /* Entry+CoreDataProperties.swift in Sources */,
-				DBF8D5402C2C60A700AD1FA1 /* Entry+CoreDataClass.swift in Sources */,
-				DBF8D53D2C2C608B00AD1FA1 /* Journal+CoreDataClass.swift in Sources */,
-				DBF8D53E2C2C608B00AD1FA1 /* Journal+CoreDataProperties.swift in Sources */,
 				DBF8D5422C3309F700AD1FA1 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,7 +357,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB702D782C223B28008569E8 /* Build configuration list for PBXProject "CoreDataJournal" */ = {
+		DB702D782C223B28008569E8 /* Build configuration list for PBXProject "SwiftDataJournal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB702D8E2C223B29008569E8 /* Debug */,
@@ -392,19 +376,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DB702D8B2C223B29008569E8 /* CoreDataJournal.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DB702D8C2C223B29008569E8 /* CoreDataJournal.xcdatamodel */,
-			);
-			currentVersion = DB702D8C2C223B29008569E8 /* CoreDataJournal.xcdatamodel */;
-			path = CoreDataJournal.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DB702D752C223B28008569E8 /* Project object */;
 }
